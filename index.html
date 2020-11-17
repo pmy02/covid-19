@@ -55,6 +55,21 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
+  
+  <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+
+    var toDay = new Date();
+    document.getElementById("toYmd").value = toDay.yyyymmdd();
+  });
+
+  Date.prototype.yyyymmdd = function() {
+      var yyyy = this.getFullYear().toString();
+      var mm = (this.getMonth() + 1).toString();
+      var dd = this.getDate().toString();
+      return  yyyy + "-" + (mm[1] ? mm : "0" + mm[0]) + "-" + (dd[1] ? dd : "0" + dd[0]);
+  }
+</script>
 </head>
 
 <body>
@@ -95,7 +110,8 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <font size=7><font color=white>2020-11-17</font></font>
+          <h3>금일 날짜는(YYYY-MM-DD)?</h3>
+          <input type="text" id="toYmd" style="text-align:center;"/>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
